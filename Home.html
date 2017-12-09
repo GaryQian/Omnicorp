@@ -42,16 +42,22 @@
         <!-- Find all Tickers with opening prices Greater than entered-->
         <h1>Find Tickers with greater or equal Opening Prices</h1>
         <form action="GreaterOpenPrice.php" method="post">
-            OepningPrice: <input type="text" name="OpeningPrice">
+            OpeningPrice: <input type="text" name="OpeningPrice">
             <input name="submit" type="submit" value="submit">
         </form>
 
         <!-- Find all Tickers with opening prices lesser than entered-->
         <h1>Find Tickers with lesser or equal Opening Prices</h1>
         <form action="LesserOpenPrice.php" method="post">
-            OepningPrice: <input type="text" name="OpeningPrice">
+            OpeningPrice: <input type="text" name="OpeningPrice">
             <input name="submit" type="submit" value="submit">
         </form>
 
+        <!-- List tickers of specific dates with specific growth percentages-->
+        <h1>Ticker and Date with Closing Price x% greater than Opening Price</h1>
+        <form action="PercentGrowth.php" method="post">
+            PercentGrowth: <input type="text" name="PercentGrowth">
+            <input name="submit" type="submit" value="submit">
+        </form>
 	</body>
 </html>

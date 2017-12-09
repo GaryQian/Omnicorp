@@ -104,3 +104,18 @@ CREATE procedure LesserOpenPrice(IN oPrice FLOAT)
         END IF; 
     END$$
 delimiter;
+
+delimiter $$
+DROP PROCEDURE IF EXISTS PercentGrowth $$
+CREATE procedure PercentGrowth(IN growth FLOAT) 
+    BEGIN 
+        IF EXISTS (SELECT tick FROM Prices) THEN 
+            SELECT Prices.tick, Prices.date
+            FROM Prices 
+            WHERE Prices.close/Prices.Open >= (1+growth)
+            ORDER BY Prices.tick ASC;
+        ELSE
+            SELECT 'ERROR: UPDATE FAILED INVALID Opening Price' AS 'Result'; 
+        END IF; 
+    END$$
+delimiter;
