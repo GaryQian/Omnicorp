@@ -17,12 +17,41 @@
         </form>
 
         <!-- Show all information for specific ticker between a range of days-->
-		<h1>Find a Ticker on a Specific Date</h1>
+		<h1>Find a Ticker on a Specific Date Range</h1>
         <form action="TickerWithDateRange.php" method="post">
             Ticker: <input type="text" name="Ticker">
             StartDate: <input type="text" name="StartDate">
             EndDate: <input type="text" name="EndDate">
             <input name="submit" type="submit" value="submit">
         </form>
+
+        <!-- Find all Tickers with closing prices greater than entered-->
+        <h1>Find Tickers with greater or equal Closing Prices</h1>
+        <form action="GreaterClosePrice.php" method="post">
+            ClosingPrice: <input type="text" name="ClosingPrice">
+            <input name="submit" type="submit" value="submit">
+        </form>
+
+        <!-- Find all Tickers with closing prices Less than entered-->
+        <h1>Find Tickers with lesser or equal Closing Prices</h1>
+        <form action="LesserClosePrice.php" method="post">
+            ClosingPrice: <input type="text" name="ClosingPrice">
+            <input name="submit" type="submit" value="submit">
+        </form>
+
+        <!-- Find all Tickers with opening prices Greater than entered-->
+        <h1>Find Tickers with greater or equal Opening Prices</h1>
+        <form action="GreaterOpenPrice.php" method="post">
+            OepningPrice: <input type="text" name="OpeningPrice">
+            <input name="submit" type="submit" value="submit">
+        </form>
+
+        <!-- Find all Tickers with opening prices lesser than entered-->
+        <h1>Find Tickers with lesser or equal Opening Prices</h1>
+        <form action="LesserOpenPrice.php" method="post">
+            OepningPrice: <input type="text" name="OpeningPrice">
+            <input name="submit" type="submit" value="submit">
+        </form>
+
 	</body>
 </html>

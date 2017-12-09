@@ -45,5 +45,62 @@ CREATE procedure FindTickerWithDate(IN id VARCHAR(5), IN dt1 VARCHAR(10), IN dt2
     END$$
 delimiter;
 
+delimiter $$
+DROP PROCEDURE IF EXISTS GreaterClosePrice $$
+CREATE procedure GreaterClosePrice(IN cPrice FLOAT) 
+    BEGIN 
+        IF EXISTS (SELECT close FROM Prices WHERE close >= cPrice) THEN 
+            SELECT DISTINCT(Prices.tick)
+            FROM Prices 
+            WHERE Prices.close >= cPrice
+            ORDER BY Prices.tick ASC;
+        ELSE
+            SELECT 'ERROR: UPDATE FAILED INVALID Closing Price' AS 'Result'; 
+        END IF; 
+    END$$
+delimiter;
 
+delimiter $$
+DROP PROCEDURE IF EXISTS LesserClosePrice $$
+CREATE procedure LesserClosePrice(IN cPrice FLOAT) 
+    BEGIN 
+        IF EXISTS (SELECT close FROM Prices WHERE close <= cPrice) THEN 
+            SELECT DISTINCT(Prices.tick)
+            FROM Prices 
+            WHERE Prices.close <= cPrice
+            ORDER BY Prices.tick ASC;
+        ELSE
+            SELECT 'ERROR: UPDATE FAILED INVALID Closing Price' AS 'Result'; 
+        END IF; 
+    END$$
+delimiter;
 
+delimiter $$
+DROP PROCEDURE IF EXISTS GreaterOpeningPrice $$
+CREATE procedure GreaterOpeningPrice(IN oPrice FLOAT) 
+    BEGIN 
+        IF EXISTS (SELECT close FROM Prices WHERE open >= oPrice) THEN 
+            SELECT DISTINCT(Prices.tick)
+            FROM Prices 
+            WHERE Prices.close >= oPrice
+            ORDER BY Prices.tick ASC;
+        ELSE
+            SELECT 'ERROR: UPDATE FAILED INVALID Opening Price' AS 'Result'; 
+        END IF; 
+    END$$
+delimiter;
+
+delimiter $$
+DROP PROCEDURE IF EXISTS LesserOpenPrice $$
+CREATE procedure LesserOpenPrice(IN oPrice FLOAT) 
+    BEGIN 
+        IF EXISTS (SELECT close FROM Prices WHERE open <= oPrice) THEN 
+            SELECT DISTINCT(Prices.tick)
+            FROM Prices 
+            WHERE Prices.close <= oPrice
+            ORDER BY Prices.tick ASC;
+        ELSE
+            SELECT 'ERROR: UPDATE FAILED INVALID Opening Price' AS 'Result'; 
+        END IF; 
+    END$$
+delimiter;
