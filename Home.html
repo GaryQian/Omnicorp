@@ -1,0 +1,28 @@
+<html>
+	<body>
+		<!-- Show all information for specific ticker-->
+		<h1>Show All Ticker Information</h1>
+        <form action="All.php" method="post">
+	        <label for="Ticker">Ticker: </label>
+	        <input type="text" name="Ticker" id="Ticker">
+	        <input type="submit" name="submit" value="submit">        	
+        </form>
+
+        <!-- Show all information for specific ticker on a specific day-->
+		<h1>Find a Ticker on a Specific Date</h1>
+        <form action="TickerWithDate.php" method="post">
+            Ticker: <input type="text" name="Ticker">
+            Date: <input type="text" name="Date">
+            <input name="submit" type="submit" value="submit">
+        </form>
+
+        <!-- Show all information for specific ticker between a range of days-->
+		<h1>Find a Ticker on a Specific Date</h1>
+        <form action="TickerWithDateRange.php" method="post">
+            Ticker: <input type="text" name="Ticker">
+            StartDate: <input type="text" name="StartDate">
+            EndDate: <input type="text" name="EndDate">
+            <input name="submit" type="submit" value="submit">
+        </form>
+	</body>
+</html>
