@@ -37,6 +37,7 @@ create table AdjPrices (
 drop table Company;
 create table Company (
        tick 	  VARCHAR(5),
+       name     VARCHAR{25},
        hqkey		VARCHAR(10),
        employees	  INTEGER,
        CEO		  FLOAT,
@@ -53,11 +54,11 @@ create table Location (
 
 
 
-insert into Company values ('AAPL', 'CUP', 123000, 'Tim Cook', '1976-04-01');
-insert into Company values ('AMZN', 'SEA', 541000, 'Jeffery Bezos', '1994-07-05');
-insert into Company values ('A', 'SCL', 13500, 'Mike McMullen', '1999-01-01');
-insert into Company values ('AMD', 'SCL', 9100, 'Lisa Su', '1969-05-01');
-insert into Company values ('AFL', 'COL', 9235, 'Dan Amos', '1955-11-17');
+insert into Company values ('AAPL', 'Apple', 'CUP', 123000, 'Tim Cook', '1976-04-01');
+insert into Company values ('AMZN', 'Amazon', 'SEA', 541000, 'Jeffery Bezos', '1994-07-05');
+insert into Company values ('A', 'Agilent', 'SCL', 13500, 'Mike McMullen', '1999-01-01');
+insert into Company values ('AMD', 'Advanced Micro Devices' 'SCL', 9100, 'Lisa Su', '1969-05-01');
+insert into Company values ('AFL', 'Aflac', 'COL', 9235, 'Dan Amos', '1955-11-17');
 
 
 
