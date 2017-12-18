@@ -11,7 +11,7 @@
                 echo "<th> Date </th></tr>";
                 while ($row = $res->fetch_assoc()) {
                     echo "<tr><td>" . $row['tick'] . "</td>".
-                     "<td>" . $row['date'] . "</td>".
+                     "<td>" . $row['date'] . "</td>"
                     ;          
                 }   
                 echo "</table>";

@@ -56,7 +56,7 @@ create table Location (
 insert into Company values ('AAPL', 'Apple', 'CUP', 123000, 'Tim Cook', '1976-04-01');
 insert into Company values ('AMZN', 'Amazon', 'SEA', 541000, 'Jeffery Bezos', '1994-07-05');
 insert into Company values ('A', 'Agilent', 'SCL', 13500, 'Mike McMullen', '1999-01-01');
-insert into Company values ('AMD', 'Advanced Micro Devices' 'SCL', 9100, 'Lisa Su', '1969-05-01');
+insert into Company values ('AMD', 'Advanced Micro Devices', 'SCL', 9100, 'Lisa Su', '1969-05-01');
 insert into Company values ('AFL', 'Aflac', 'COL', 9235, 'Dan Amos', '1955-11-17');
 
 

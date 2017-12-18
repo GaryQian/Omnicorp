@@ -2,7 +2,7 @@
     <body>
         <?php
             include 'open.php';
-            $Ticker = $_POST["Ticker"];                                         // Get the user input.
+            $Ticker = $_POST["Ticker"]; // Get the user input.
             $mysqli->multi_query("CALL ShowTickInfo('".$Ticker."');");      // Execute the query with the input.
             $res = $mysqli->store_result();
             if ($res) {
@@ -23,27 +23,27 @@
                 echo "<th> Adjusted Low </th></tr>";
                 while ($row = $res->fetch_assoc()) {
                     echo "<tr><td>" . $row['tick'] . "</td>".
-                    "<td>" . $row['date'] . "</td>".
-                    "<td>" . $row['open'] . "</td>".
-                    "<td>" . $row['close'] . "</td>".
-                    "<td>" . $row['high'] . "</td>".
-                    "<td>" . $row['low'] . "</td>".
-                    "<td>" . $row['volume'] . "</td>".
-                    "<td>" . $row['adjvolume'] . "</td>".
-                    "<td>" . $row['div'] . "</td>".
-                    "<td>" . $row['splitratio'] . "</td>".
-                    "<td>" . $row['aopen'] . "</td>"
+                    "<td>" . $row['date'] . "</td>" .
+                    "<td>" . $row['open'] . "</td>" .
+                    "<td>" . $row['close'] . "</td>" .
+                    "<td>" . $row['high'] . "</td>" .
+                    "<td>" . $row['low'] . "</td>" .
+                    "<td>" . $row['volume'] . "</td>" .
+                    "<td>" . $row['adjvolume'] . "</td>" .
+                    "<td>" . $row['divi'] . "</td>" .
+                    "<td>" . $row['splitratio'] . "</td>" .
+                    "<td>" . $row['aopen'] . "</td>" .
                     "<td>" . $row['aclose'] . "</td>".
                     "<td>" . $row['ahigh'] . "</td>".
-                    "<td>" . $row['alow'] . "</td>"
-                    ;          
-                }   
+                    "<td>" . $row['alow'] . "</td></tr>"
+                    ;
+                }
                 echo "</table>";
-                $res->free();                                                               // Clean-up.
+                $res->free();  // Clean-up.
             } else {
-                printf("<br>Error: %s\n", $mysqli->error);                      // The procedure failed to execute.
+                printf("<br>Error: %s\n", $mysqli->error);  // The procedure failed to execute.
             }   
-            $mysqli->close();                                                               // Clean-up.
+            $mysqli->close();   // Clean-up.
         ?>  
     </body>
 </html>

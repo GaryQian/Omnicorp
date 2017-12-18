@@ -10,7 +10,7 @@ CREATE procedure LocationOfCompany(IN id VARCHAR(5))
         SELECT 'ERROR: UPDATE FAILED INVALID Ticker' AS 'Result'; 
       END IF; 
     END$$
-delimiter;
+delimiter ;
 
 delimiter $$
 DROP PROCEDURE IF EXISTS CompaniesInSameCity $$
@@ -25,7 +25,7 @@ CREATE procedure CompaniesInSameCity(IN id VARCHAR(5))
         SELECT 'ERROR: UPDATE FAILED INVALID Ticker' AS 'Result'; 
       END IF; 
     END$$
-delimiter;
+delimiter ;
 
 delimiter $$
 DROP PROCEDURE IF EXISTS CompaniesInSameState $$
@@ -41,7 +41,7 @@ CREATE procedure CompaniesInSameState(IN id VARCHAR(5))
         SELECT 'ERROR: UPDATE FAILED INVALID Ticker' AS 'Result'; 
       END IF; 
     END$$
-delimiter;
+delimiter ;
 
 delimiter $$
 DROP PROCEDURE IF EXISTS CompaniesInSameCountry $$
@@ -57,7 +57,7 @@ CREATE procedure CompaniesInSameCountry(IN id VARCHAR(5))
         SELECT 'ERROR: UPDATE FAILED INVALID Ticker' AS 'Result'; 
       END IF; 
     END$$
-delimiter;
+delimiter ;
 
 
 delimiter $$
@@ -72,7 +72,7 @@ CREATE procedure EmployeesOfCompany(IN id VARCHAR(5))
         SELECT 'ERROR: UPDATE FAILED INVALID Ticker' AS 'Result'; 
       END IF; 
     END$$
-delimiter;
+delimiter ;
 
 
 delimiter $$
@@ -89,7 +89,7 @@ CREATE procedure BiggestEmployerInState(IN s VARCHAR(5))
         SELECT 'ERROR: UPDATE FAILED INVALID state' AS 'Result'; 
       END IF; 
     END$$
-delimiter;
+delimiter ;
 
 delimiter $$
 DROP PROCEDURE IF EXISTS BiggestEmployerInCountry $$
@@ -105,7 +105,7 @@ CREATE procedure BiggestEmployerInCountry(IN c VARCHAR(5))
         SELECT 'ERROR: UPDATE FAILED INVALID state' AS 'Result'; 
       END IF; 
     END$$
-delimiter;
+delimiter ;
 
 
 delimiter $$
@@ -122,7 +122,7 @@ CREATE procedure BiggestEmployerInCity(IN c VARCHAR(5))
         SELECT 'ERROR: UPDATE FAILED INVALID state' AS 'Result'; 
       END IF; 
     END$$
-delimiter;
+delimiter ;
 
 
 

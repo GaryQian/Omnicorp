@@ -12,7 +12,7 @@ CREATE PROCEDURE ShowTickInfo(IN id VARCHAR(5))
             SELECT 'ERROR: Tick NOT FOUND' AS 'Result'; 
         END IF; 
     END$$
-delimiter;
+delimiter ;
 
 delimiter $$
 DROP PROCEDURE IF EXISTS FindTickerWithDate $$
@@ -28,13 +28,13 @@ CREATE procedure FindTickerWithDate(IN id VARCHAR(5), IN dt VARCHAR(10))
             SELECT 'ERROR: UPDATE FAILED INVALID Ticker OR Date' AS 'Result'; 
         END IF; 
     END$$
-delimiter;
+delimiter ;
 
 delimiter $$
 DROP PROCEDURE IF EXISTS FindTickerWithDateRange $$
-CREATE procedure FindTickerWithDate(IN id VARCHAR(5), IN dt1 VARCHAR(10), IN dt2 VARCHAR(10)) 
+CREATE procedure FindTickerWithDateRange(IN id VARCHAR(5), IN dt1 VARCHAR(10), IN dt2 VARCHAR(10)) 
     BEGIN 
-        IF EXISTS (SELECT tick FROM Prices WHERE tick = id) AND EXISTS (SELECT date FROM Prices WHERE dt1 >= date AND dt2 <= date) THEN 
+        IF EXISTS (SELECT tick FROM Prices WHERE tick = id) THEN 
             SELECT * 
             FROM Prices JOIN Volume ON Prices.tick = Volume.tick AND Prices.date = Volume.date
             JOIN Misc ON Prices.tick = Misc.tick AND Prices.date = Misc.date
@@ -44,7 +44,7 @@ CREATE procedure FindTickerWithDate(IN id VARCHAR(5), IN dt1 VARCHAR(10), IN dt2
             SELECT 'ERROR: UPDATE FAILED INVALID Ticker OR Date' AS 'Result'; 
         END IF; 
     END$$
-delimiter;
+delimiter ;
 
 delimiter $$
 DROP PROCEDURE IF EXISTS GreaterClosePrice $$
@@ -59,7 +59,7 @@ CREATE procedure GreaterClosePrice(IN cPrice FLOAT)
             SELECT 'ERROR: UPDATE FAILED INVALID Closing Price' AS 'Result'; 
         END IF; 
     END$$
-delimiter;
+delimiter ;
 
 delimiter $$
 DROP PROCEDURE IF EXISTS LesserClosePrice $$
@@ -74,7 +74,7 @@ CREATE procedure LesserClosePrice(IN cPrice FLOAT)
             SELECT 'ERROR: UPDATE FAILED INVALID Closing Price' AS 'Result'; 
         END IF; 
     END$$
-delimiter;
+delimiter ;
 
 delimiter $$
 DROP PROCEDURE IF EXISTS GreaterOpeningPrice $$
@@ -89,7 +89,7 @@ CREATE procedure GreaterOpeningPrice(IN oPrice FLOAT)
             SELECT 'ERROR: UPDATE FAILED INVALID Opening Price' AS 'Result'; 
         END IF; 
     END$$
-delimiter;
+delimiter ;
 
 delimiter $$
 DROP PROCEDURE IF EXISTS LesserOpenPrice $$
@@ -104,7 +104,7 @@ CREATE procedure LesserOpenPrice(IN oPrice FLOAT)
             SELECT 'ERROR: UPDATE FAILED INVALID Opening Price' AS 'Result'; 
         END IF; 
     END$$
-delimiter;
+delimiter ;
 
 delimiter $$
 DROP PROCEDURE IF EXISTS PercentGrowth $$
@@ -119,4 +119,4 @@ CREATE procedure PercentGrowth(IN growth FLOAT)
             SELECT 'ERROR: UPDATE FAILED INVALID Opening Price' AS 'Result'; 
         END IF; 
     END$$
-delimiter;
+delimiter ;

@@ -1,15 +1,15 @@
 <html>
-	<body>
-		<!-- Show all information for specific ticker-->
-		<h1>Show All Ticker Information</h1>
+  <body>
+    <!-- Show all information for specific ticker-->
+    <h1>Show All Ticker Information</h1>
         <form action="All.php" method="post">
-	        <label for="Ticker">Ticker: </label>
-	        <input type="text" name="Ticker" id="Ticker">
-	        <input type="submit" name="submit" value="submit">        	
+          <label for="Ticker">Ticker: </label>
+          <input type="text" name="Ticker" id="Ticker">
+          <input type="submit" name="submit" value="submit">          
         </form>
 
         <!-- Show all information for specific ticker on a specific day-->
-		<h1>Find a Ticker on a Specific Date</h1>
+    <h1>Find a Ticker on a Specific Date</h1>
         <form action="TickerWithDate.php" method="post">
             Ticker: <input type="text" name="Ticker">
             Date: <input type="text" name="Date">
@@ -17,7 +17,7 @@
         </form>
 
         <!-- Show all information for specific ticker between a range of days-->
-		<h1>Find a Ticker on a Specific Date Range</h1>
+    <h1>Find a Ticker on a Specific Date Range</h1>
         <form action="TickerWithDateRange.php" method="post">
             Ticker: <input type="text" name="Ticker">
             StartDate: <input type="text" name="StartDate">
@@ -26,38 +26,77 @@
         </form>
 
         <!-- Find all Tickers with closing prices greater than entered-->
-        <h1>Find Tickers with greater or equal Closing Prices</h1>
+    <h1>Find Tickers with greater or equal Closing Prices</h1>
         <form action="GreaterClosePrice.php" method="post">
             ClosingPrice: <input type="text" name="ClosingPrice">
             <input name="submit" type="submit" value="submit">
         </form>
 
         <!-- Find all Tickers with closing prices Less than entered-->
-        <h1>Find Tickers with lesser or equal Closing Prices</h1>
+    <h1>Find Tickers with lesser or equal Closing Prices</h1>
         <form action="LesserClosePrice.php" method="post">
             ClosingPrice: <input type="text" name="ClosingPrice">
             <input name="submit" type="submit" value="submit">
         </form>
 
         <!-- Find all Tickers with opening prices Greater than entered-->
-        <h1>Find Tickers with greater or equal Opening Prices</h1>
+    <h1>Find Tickers with greater or equal Opening Prices</h1>
         <form action="GreaterOpenPrice.php" method="post">
             OpeningPrice: <input type="text" name="OpeningPrice">
             <input name="submit" type="submit" value="submit">
         </form>
 
         <!-- Find all Tickers with opening prices lesser than entered-->
-        <h1>Find Tickers with lesser or equal Opening Prices</h1>
+    <h1>Find Tickers with lesser or equal Opening Prices</h1>
         <form action="LesserOpenPrice.php" method="post">
             OpeningPrice: <input type="text" name="OpeningPrice">
             <input name="submit" type="submit" value="submit">
         </form>
 
         <!-- List tickers of specific dates with specific growth percentages-->
-        <h1>Ticker and Date with Closing Price x% greater than Opening Price</h1>
+    <h1>Ticker and Date with Closing Price x% greater than Opening Price</h1>
         <form action="PercentGrowth.php" method="post">
             PercentGrowth: <input type="text" name="PercentGrowth">
             <input name="submit" type="submit" value="submit">
         </form>
-	</body>
+        
+<!-- ##################################################################################################################################################################################################################-->
+        
+        
+    <h1>Location of company</h1>
+        <form action="Location.php" method="post">
+            Ticker: <input type="text" name="Ticker">
+            <input name="submit" type="submit" value="submit">
+        </form>
+        
+    <h1>Companies In Same City</h1>
+        <form action="SameCity.php" method="post">
+            Ticker: <input type="text" name="Ticker">
+            <input name="submit" type="submit" value="submit">
+        </form>
+        
+    <h1>Companies In Same State</h1>
+        <form action="SameState.php" method="post">
+            State: <input type="text" name="State">
+            <input name="submit" type="submit" value="submit">
+        </form>
+        
+    <h1>Companies In Same Country</h1>
+        <form action="SameCountry.php" method="post">
+            Country: <input type="text" name="Country">
+            <input name="submit" type="submit" value="submit">
+        </form>
+        
+    <h1>Employees of Company</h1>
+        <form action="Employees.php" method="post">
+            Ticker: <input type="text" name="Ticker">
+            <input name="submit" type="submit" value="submit">
+        </form>
+    
+    <h1>Biggest Employer in State</h1>
+        <form action="BiggestEmployerInState.php" method="post">
+            State <input type="text" name="State">
+            <input name="submit" type="submit" value="submit">
+        </form>
+  </body>
 </html>

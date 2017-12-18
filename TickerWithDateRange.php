@@ -34,7 +34,7 @@
                     "<td>" . $row['adjvolume'] . "</td>".
                     "<td>" . $row['div'] . "</td>".
                     "<td>" . $row['splitratio'] . "</td>".
-                    "<td>" . $row['aopen'] . "</td>"
+                    "<td>" . $row['aopen'] . "</td>" .
                     "<td>" . $row['aclose'] . "</td>".
                     "<td>" . $row['ahigh'] . "</td>".
                     "<td>" . $row['alow'] . "</td>"
