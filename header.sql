@@ -1,57 +1,56 @@
 drop table Prices;
 create table Prices (
-       tick 	  VARCHAR(5),
-       date		  VARCHAR(10),
-       open		  FLOAT,
-       close	  FLOAT,
-       high		  FLOAT,
-       low		  FLOAT,
+       tick     VARCHAR(5),
+       date     VARCHAR(10),
+       open     FLOAT,
+       close    FLOAT,
+       high     FLOAT,
+       low      FLOAT
 );
 
 drop table Volume;
 create table Volume (
-       tick 	  VARCHAR(5),
-       date		  VARCHAR(10),
-       volume		  FLOAT,
-       adjvolume	  FLOAT,
+       tick       VARCHAR(5),
+       date       VARCHAR(10),
+       volume     FLOAT,
+       adjvolume  FLOAT
 );
 
 drop table Misc;
 create table Misc (
-       tick 	  VARCHAR(5),
-       date		  VARCHAR(10),
-       div		  FLOAT,
-       splitratio	  FLOAT,
+       tick       VARCHAR(5),
+       date       VARCHAR(10),
+       divi        FLOAT,
+       splitratio FLOAT
 );
 
 drop table AdjPrices;
 create table AdjPrices (
-       tick 	  VARCHAR(5),
-       date		  VARCHAR(10),
-       aopen		  FLOAT,
-       aclose	  FLOAT,
-       ahigh		  FLOAT,
-       alow		  FLOAT,
+       tick     VARCHAR(5),
+       date     VARCHAR(10),
+       aopen    FLOAT,
+       aclose   FLOAT,
+       ahigh    FLOAT,
+       alow     FLOAT
 );
 
 drop table Company;
 create table Company (
-       tick 	  VARCHAR(5),
-       name     VARCHAR{25},
-       hqkey		VARCHAR(10),
-       employees	  INTEGER,
-       CEO		  FLOAT,
-       founddate VARCHAR(10),
+       tick       VARCHAR(5),
+       name       VARCHAR(25),
+       hqkey      VARCHAR(10),
+       employees  INTEGER,
+       CEO        VARCHAR(20),
+       founddate  VARCHAR(10)
 );
 
 drop table Location;
 create table Location (
-       key		VARCHAR(10),
-       city		VARCHAR(15),
-       state		VARCHAR(10),
-       country		VARCHAR(10),
+       hqkey      VARCHAR(10),
+       city     VARCHAR(15),
+       state    VARCHAR(10),
+       country  VARCHAR(10)
 );
-
 
 
 insert into Company values ('AAPL', 'Apple', 'CUP', 123000, 'Tim Cook', '1976-04-01');
