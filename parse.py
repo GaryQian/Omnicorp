@@ -20,15 +20,15 @@ with open(filename + '.csv') as csvfile:
     s = "insert into Prices values ( '" + str(row['ticker']) + "', '" + str(d) + "', " + str(row['open']) + ", " + str(row['close']) + ", " + str(row['high']) + ", " + str(row['low']) + ");"
     print s
     
-    s = "insert into Volume values ( '" + str(row['ticker']) + "', '" + str(d) + "', " + str(row['volume']) + str(row['adj_volume']) + ");"
+    s = "insert into Volume values ( '" + str(row['ticker']) + "', '" + str(d) + "', " + str(row['volume']) + ", " + str(row['adj_volume']) + ");"
     print s
     
     s = "insert into AdjPrices values ( '" + str(row['ticker']) + "', '" + str(d) + "', " + str(row['adj_open']) + ", " + str(row['adj_close']) + ", " + str(row['adj_high']) + ", " + str(row['adj_low']) + ");"
     print s
     
-    s = "insert into Misc values ( '" + str(row['ticker']) + "', '" + str(d) + "', " + str(row['ex-dividend']) + str(row['split_ratio']) + ");"
+    s = "insert into Misc values ( '" + str(row['ticker']) + "', '" + str(d) + "', " + str(row['ex-dividend']) + ", "+ str(row['split_ratio']) + ");"
     print s
     
     counter += 1
-    if counter > 1000000:
+    if counter > 1000:
       break
