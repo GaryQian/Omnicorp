@@ -77,7 +77,7 @@ delimiter ;
 
 delimiter $$
 DROP PROCEDURE IF EXISTS BiggestEmployerInState $$
-CREATE procedure BiggestEmployerInState(IN s VARCHAR(5)) 
+CREATE procedure BiggestEmployerInState(IN s VARCHAR(10)) 
     BEGIN 
       IF EXISTS (SELECT state FROM Location WHERE state = s) THEN 
         SELECT Company.tick
@@ -110,7 +110,7 @@ delimiter ;
 
 delimiter $$
 DROP PROCEDURE IF EXISTS BiggestEmployerInCity $$
-CREATE procedure BiggestEmployerInCity(IN c VARCHAR(5)) 
+CREATE procedure BiggestEmployerInCity(IN c VARCHAR(15)) 
     BEGIN 
       IF EXISTS (SELECT city FROM Location WHERE city = c) THEN 
         SELECT Company.tick
