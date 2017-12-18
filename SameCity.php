@@ -7,7 +7,7 @@
             $res = $mysqli->store_result();
             if ($res) {
                 echo "<table border=\"1px solid black\">";
-                echo "<tr><th> Ticker  </th>""</tr>";
+                echo "<tr><th> Ticker  </th></tr>";
                 while ($row = $res->fetch_assoc()) {
                     echo "<tr><td>" . $row['tick'] . "</td></tr>"
                     ;

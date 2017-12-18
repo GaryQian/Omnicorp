@@ -2,15 +2,15 @@
     <body>
         <?php
             include 'open.php';
-            $State = $_POST["State"]; // Get the user input.
-            $mysqli->multi_query("CALL CompaniesInSameState('".$State."');");      // Execute the query with the input.
+            $Ticker = $_POST["Ticker"]; // Get the user input.
+            $mysqli->multi_query("CALL CompaniesInSameState('".$Ticker."');");      // Execute the query with the input.
             $res = $mysqli->store_result();
             if ($res) {
                 echo "<table border=\"1px solid black\">";
                 echo "<tr><th> Ticker  </th>";
                 echo "<th> City </th>";
                 echo "<th> State </th>";
-                echo "<th> Country </th>""</tr>";
+                echo "<th> Country </th></tr>";
                 while ($row = $res->fetch_assoc()) {
                     echo "<tr><td>" . $row['tick'] . "</td>".
                     "<td>" . $row['city'] . "</td>" .
