@@ -30,5 +30,5 @@ with open(filename + '.csv') as csvfile:
     print s
     
     counter += 1
-    if counter > 1000:
+    if counter > 75000:
       break
